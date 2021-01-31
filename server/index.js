@@ -10,7 +10,6 @@ let app = express();
 
 let environment = process.env.NODE_ENV || 'development';
 
-console.log(process.env);
 database(config[environment]);
 require('./config/express')(app, config[environment]);
 require('./config/routes')(app);
