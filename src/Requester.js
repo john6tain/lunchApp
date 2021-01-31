@@ -1,10 +1,9 @@
 import $ from 'jquery';
 // import Auth from './Auth';
 import request from 'superagent';
-const HOST = window.location.host;
-const BASE_URL = `http://${HOST}`;
+const BASE_URL = window.location.origin;
 const CONTENT_TYPE = 'application/json';
-const CLOUDINARY_UPLOAD_URL = `http://${HOST}/user/menu/upload`;
+const CLOUDINARY_UPLOAD_URL = `${BASE_URL}/user/menu/upload`;
 // const COMBATANT_IMAGE_PRESET = 'order_image';
 // const FILE_NAME_PREFIX = 'sd_combatant_image_';
 
