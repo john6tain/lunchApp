@@ -188,7 +188,7 @@ export default function App(props) {
       </Grid>
     </Card>
   );
-  const [name, setName] = useState('John');
+  const [name, setName] = useState('');
 
 
   return (
