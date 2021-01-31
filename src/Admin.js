@@ -145,7 +145,7 @@ export default function Admin() {
                         />
                         <Divider key={parent._id + 1} />
                         <Grid item key={parent._id + 2}
-                            xs={12} container
+                            sm={12} xs={10} container
                             spacing={1}
                             direction="row">
                             <Grid item xs={11} container direction="column" spacing={0} key={parent._id + 4}>

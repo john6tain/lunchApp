@@ -104,7 +104,7 @@ export default function App(props) {
   }
   const numberOfChecked = (items) => intersection(checked, items).length;
 
-  const calculatePrice = (items) => { return items.length > 0 ? items.map(el => el.split('./')[1].split(' ')[0]).reduce((a, b) => Number(a) + Number(b), 0).toFixed(2) : ''; }
+  const calculatePrice = (items) => { return items.length > 0 ? items.map(el => el.indexOf('лв.') > -1 && el.split('./')[1].split(' ')[0]).reduce((a, b) => Number(a) + Number(b), 0).toFixed(2) : ''; }
 
   const handleToggleAll = (items) => () => {
     if (numberOfChecked(items) === items.length) {
@@ -160,7 +160,7 @@ export default function App(props) {
         spacing={1}
         direction="row"
       >
-        <Grid item xs={10} container direction="column" spacing={0}>
+        <Grid item sm={10} xs={12} container direction="column">
           <List className={classes.listBottom} dense component="div" role="list">
             {items.map((value) => {
               const labelId = `transfer-list-all-item-${value}-label`;
@@ -175,7 +175,7 @@ export default function App(props) {
 
           </List>
         </Grid>
-        <Grid item xs={2} container direction="column" spacing={0} style={{ marginBottom: '1rem' }}>
+        <Grid item sm={2}  container direction="column" style={{ marginBottom: '1rem' }}>
           <TextField
             id="outlined-textarea"
             label="Add Comment"
@@ -183,7 +183,7 @@ export default function App(props) {
             value={comment} onChange={handleInputChange}
             variant="outlined"
             style={{ marginTop: '1rem', marginBottom: '1rem' }} />
-          <Chip style={{ float: 'right' }} label={`${calculatePrice(items)} ${items.length > 0 ? items[0].split('./')[1].split(' ')[1] : ''} `} variant="outlined" color="primary" deleteIcon={<ShoppingCartIcon />} onDelete={handleBuy} />
+          <Chip style={{ float: 'right' }} label={`${calculatePrice(items)} ${items.length > 0 && items[0].indexOf('лв.') > -1 ? items[0].split('./')[1].split(' ')[1] : ''} `} variant="outlined" color="primary" deleteIcon={<ShoppingCartIcon />} onDelete={handleBuy} />
         </Grid>
       </Grid>
     </Card>

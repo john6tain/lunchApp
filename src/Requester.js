@@ -2,6 +2,7 @@ import $ from 'jquery';
 
 import request from 'superagent';
 const BASE_URL = window.location.origin;
+// const BASE_URL = 'http://localhost:3001';
 const CONTENT_TYPE = 'application/json';
 const CLOUDINARY_UPLOAD_URL = `${BASE_URL}/user/menu/upload`;
 
