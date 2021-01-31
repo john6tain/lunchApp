@@ -1,10 +1,12 @@
 const controllers = require('../controllers/index');
-const permissions = require('./permissions');
 const authenticate = require('../utilities/authentication');
-var multer = require("multer");
+const path = require('path');
 
 module.exports = (app) => {
     // app.post('/user/register', controllers.user.register.post);
+    app.get('/', function (req, res) {
+        res.sendFile(path.join(__dirname, '/../../build', 'index.html'));
+***REMOVED***);
     app.post('/lunch/request', controllers.user.sendLunchRequest);
     app.post('/user/login', controllers.user.login.post);
     app.post('/user/menu/update', authenticate, controllers.user.menu.update);

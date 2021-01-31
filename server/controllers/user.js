@@ -4,8 +4,6 @@ const OrderMenu = require('../models/OrederMenu');
 const encryption = require('../utilities/encryption');
 const passport = require('passport');
 const fs = require("fs");
-const formidable = require('formidable');
-const path = require('path');
 
 ***REMOVED***
     register: {

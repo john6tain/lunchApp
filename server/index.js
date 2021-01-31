@@ -1,8 +1,8 @@
 "use strict";
 
 const express = require('express');
+require('dotenv').config();
 const port =  process.env.PORT || 3001;
-
 const config = require('./config/config');
 const database = require('./config/database.js');
 
